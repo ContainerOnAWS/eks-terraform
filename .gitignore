@@ -1,5 +1,9 @@
 
 
+#Terraform
+
+**/.terraform
+
 .gradle
 .vscode
 **/logs
@@ -18,15 +22,6 @@
 
 # MAC
 **/.DS_Store
-
-# bmz
-20*
-gpu-api-bzt.yaml
-
-# CDK
-**/node_modules
-**/cdk.out
-**/cdk.context.json
 
 #-------------------
 
