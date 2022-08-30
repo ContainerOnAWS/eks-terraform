@@ -37,3 +37,10 @@ terraform destroy
 cd 01-vpc
 terraform destroy
 ```
+
+## Reference
+
+* https://github.com/terraform-aws-modules/terraform-aws-vpc
+
+* https://github.com/terraform-aws-modules/terraform-aws-eks
+
