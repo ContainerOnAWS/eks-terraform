@@ -25,3 +25,11 @@ module "vpc" {
     Environment = "dev"
   }
 }
+output "vpc_id" {
+  description = "The ID of the VPC"
+  value       = try(module.vpc.vpc_id, "")
+}
+output "private_subnets" {
+  description = "The ID of the VPC"
+  value       = try(module.vpc.aws_subnet.private[*].id, "")
+}

@@ -1,19 +1,37 @@
+module "eks" {
+  source = "terraform-aws-modules/eks/aws"
 
-module "vpc" {
-  source = "terraform-aws-modules/vpc/aws"
+  cluster_name                    = "eks-terraform"
+  cluster_version                 = "1.21"
+  cluster_endpoint_private_access = false
+  cluster_endpoint_public_access  = true
 
-  name = "eks-vpc-dev"
-  cidr = "10.0.0.0/16"
+  cluster_addons = {
+    coredns = {
+      resolve_conflicts = "OVERWRITE"
+    }
+    kube-proxy = {}
+    vpc-cni = {
+      resolve_conflicts = "OVERWRITE"
+    }
+  }
 
-  azs             = ["ap-northeast-2a", "ap-northeast-2b", "ap-northeast-2c"]
-  public_subnets  = ["10.0.0.0/20", "10.0.16.0/20", "10.0.32.0/20"]
-  private_subnets = ["10.0.48.0/20", "10.0.64.0/20", "10.0.80.0/20"]
+  vpc_id     = "vpc-0af55e603924ea9e2"
+  subnet_ids = [ "subnet-0a33480e7684260a7", "subnet-0dae1739caeed8ced", "subnet-0e6b836c30dd7e186" ]
 
-  enable_nat_gateway = true
-  enable_vpn_gateway = true
+  cloudwatch_log_group_retention_in_days = 1
 
-  tags = {
-    Terraform = "true"
-    Environment = "dev"
+  fargate_profiles = {
+    default = {
+      name = "default"
+      selectors = [
+        {
+          namespace = "kube-system"
+        },
+        {
+          namespace = "default"
+        }
+      ]
+    }
   }
 }
