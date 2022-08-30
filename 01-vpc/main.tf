@@ -12,8 +12,22 @@ module "vpc" {
   enable_nat_gateway = true
   enable_vpn_gateway = true
 
+  public_subnet_tags = {
+    "kubernetes.io/role/elb"          = "1"
+  }
+
+  private_subnet_tags = {
+    "kubernetes.io/role/internal-elb" = "1"
+  }
+
   tags = {
     Terraform = "true"
     Environment = "dev"
   }
+}
+output "vpc_id" {
+  value       = try(module.vpc.vpc_id, "")
+}
+output "private_subnets" {
+  value       = try(module.vpc.aws_subnet.private[*].id, "")
 }
