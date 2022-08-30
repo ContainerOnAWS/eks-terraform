@@ -17,6 +17,8 @@ terraform apply
 
 ### Step 2: EKS cluster & nodegroup
 
+Update `vpc_id` and `subnet_ids` with VPC module output.
+
 Deploy a new EKS cluster & nodegroup:
 
 ```bash
