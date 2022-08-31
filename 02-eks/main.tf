@@ -44,16 +44,3 @@ module "eks" {
     }
   }
 }
-  # fargate_profiles = {
-  #   default = {
-  #     name = "default"
-  #     selectors = [
-  #       {
-  #         namespace = "kube-system"
-  #       },
-  #       {
-  #         namespace = "default"
-  #       }
-  #     ]
-  #   }
-  # }

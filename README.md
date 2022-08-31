@@ -38,6 +38,10 @@ terraform destroy
 
 cd 01-vpc
 terraform destroy
+
+find . -name ".terraform" -exec rm -rf {} \;
+find . -name "terraform.tfstate" -exec rm -rf {} \;
+find . -name ".terraform.lock.hcl" -exec rm -rf {} \;
 ```
 
 ## Reference
