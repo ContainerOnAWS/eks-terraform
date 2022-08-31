@@ -36,7 +36,7 @@ terraform apply
 cd 02-eks
 terraform destroy
 
-cd 01-vpc
+cd ../01-vpc
 terraform destroy
 
 find . -name ".terraform" -exec rm -rf {} \;
@@ -49,4 +49,3 @@ find . -name ".terraform.lock.hcl" -exec rm -rf {} \;
 * https://github.com/terraform-aws-modules/terraform-aws-vpc
 
 * https://github.com/terraform-aws-modules/terraform-aws-eks
-
