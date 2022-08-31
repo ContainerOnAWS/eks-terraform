@@ -24,17 +24,23 @@ module "eks" {
 
   cloudwatch_log_group_retention_in_days = 1
 
-  fargate_profiles = {
-    default = {
-      name = "default"
-      selectors = [
-        {
-          namespace = "kube-system"
-        },
-        {
-          namespace = "default"
-        }
-      ]
+  eks_managed_node_groups = {
+    worker_group = {
+      name           = "default-ng"
+      min_size       = 2
+      max_size       = 10
+      desired_size   = 2
+      instance_types = ["c5.large"]
+      capacity_type  = "ON_DEMAND"
+      update_config = {
+        max_unavailable_percentage = 50
+      }
+      labels = {
+        stage = "dev"
+      }
+      tags = {
+        stage = "dev"
+      }
     }
   }
 }
