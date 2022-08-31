@@ -47,7 +47,7 @@ cd ../app
 ./buiid.sh
 ```
 
-[app/buiid.sh](./app/buiid.sh)
+[04-app/build.sh](./04-app/build.sh)
 
 ### Step 5: Deploy the API
 
@@ -59,7 +59,7 @@ cat ping-api.yaml
 kubectl apply -f ping-api.yaml
 ```
 
-[app/ping-api-template.yaml](./app/ping-api-template.yaml)
+[04-app/ping-api-template.yaml](./04-app/ping-api-template.yaml)
 
 ## Clean Up
 
