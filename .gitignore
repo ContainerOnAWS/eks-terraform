@@ -2,8 +2,11 @@
 
 #Terraform
 
-.terraform
-**/terraform.tfstate*
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
 
 .gradle
 .vscode
