@@ -8,6 +8,8 @@
 crash.log
 crash.*.log
 
+**/ping-api.yaml
+
 .gradle
 .vscode
 **/logs
