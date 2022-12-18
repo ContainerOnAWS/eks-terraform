@@ -7,13 +7,8 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
-  docker-build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: cd 04-app && docker build . -t eks-terraform:$(date +%s)
-  sonarqube:
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
