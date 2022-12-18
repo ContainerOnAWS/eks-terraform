@@ -10,8 +10,8 @@ repositories {
 sonarqube {
     properties {
         property "sonar.projectName", "eks-terraform"
-        property "sonar.projectKey", "ContainerOnAWS_eks-terraform"
-        property "sonar.organization", "containeronaws"
+        property "sonar.projectKey", "DevSecOpsSamples_eks-terraform"
+        property "sonar.organization", "devsecopssamples"
         // property "sonar.host.url", "http://127.0.0.1:9000"
         property "sonar.host.url", "https://sonarcloud.io"
         property "sonar.sourceEncoding", "UTF-8"
@@ -21,6 +21,6 @@ sonarqube {
         property "sonar.issue.ignore.multicriteria", "e1"
         property "sonar.issue.ignore.multicriteria.e1.ruleKey", "typescript:S1848"
         property "sonar.issue.ignore.multicriteria.e1.resourceKey", "**/*.ts"
-        property "sonar.links.ci", "https://github.com/ContainerOnAWS/eks-terraform"
+        property "sonar.links.ci", "https://github.com/DevSecOpsSamples/eks-terraform/actions"
     }
 }
