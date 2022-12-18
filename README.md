@@ -1,5 +1,6 @@
 # EKS sample project with Terraform
 
+[![Build](https://github.com/DevSecOpsSamples/eks-terraform/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/DevSecOpsSamples/eks-terraform/actions/workflows/build.yml)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ContainerOnAWS_eks-terraform&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=ContainerOnAWS_eks-terraform) [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=ContainerOnAWS_eks-terraform&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=ContainerOnAWS_eks-terraform)
 
 ![eks-terraform](./screenshots/eks-terraform.png?raw=true)
@@ -61,7 +62,7 @@ kubectl apply -f ping-api.yaml
 
 [04-app/ping-api-template.yaml](./04-app/ping-api-template.yaml)
 
-## Clean Up
+## Cleanup
 
 ```bash
 cd 02-eks
